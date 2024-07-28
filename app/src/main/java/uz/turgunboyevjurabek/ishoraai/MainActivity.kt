@@ -21,6 +21,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.viewinterop.AndroidView
+import uz.turgunboyevjurabek.ishoraai.Domein.CustomWebChromeClient
+import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.MainScreen
 import uz.turgunboyevjurabek.ishoraai.ui.theme.IshoraAITheme
 
 class MainActivity : ComponentActivity() {
@@ -33,7 +35,7 @@ class MainActivity : ComponentActivity() {
                     Column(
                         modifier = Modifier.padding(innerPadding)
                     ) {
-                        MyWebView()
+                        MainScreen()
                     }
                 }
             }
@@ -61,12 +63,4 @@ fun MyWebView() {
     })
 }
 
-class CustomWebChromeClient : WebChromeClient() {
-    override fun onCloseWindow(window: WebView?) {}
-
-    override fun onConsoleMessage(consoleMessage: ConsoleMessage?): Boolean {
-        Log.d("jjjj", consoleMessage?.message().toString())
-        return true
-    }
-}
 
