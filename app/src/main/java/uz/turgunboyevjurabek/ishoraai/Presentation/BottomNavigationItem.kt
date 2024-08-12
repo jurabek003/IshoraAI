@@ -1,4 +1,4 @@
-package uz.turgunboyevjurabek.ishoraai.Domein
+package uz.turgunboyevjurabek.ishoraai.Presentation
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter

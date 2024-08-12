@@ -21,7 +21,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import uz.turgunboyevjurabek.ishoraai.Domein.CustomWebChromeClient
+import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.Auth.SplashScreen
 import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.MainScreen
 import uz.turgunboyevjurabek.ishoraai.ui.theme.IshoraAITheme
 
@@ -35,7 +37,8 @@ class MainActivity : ComponentActivity() {
                     Column(
                         modifier = Modifier.padding(innerPadding)
                     ) {
-                        MainScreen()
+//                        MainScreen()
+                        SplashScreen()
                     }
                 }
             }
