@@ -6,8 +6,7 @@
   <group
       android:name="animationGroup"
       android:pivotX="1750"
-      android:pivotY="1750"
-      >
+      android:pivotY="1750">
 
     <path
         android:pathData="M4,0h84v97.13h-84z"

@@ -2,4 +2,9 @@
 <resources>
 
     <style name="Theme.IshoraAI" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#793FDF</item>
+        <item name="postSplashScreenTheme">@style/Theme.IshoraAI</item>
+
+    </style>
 </resources>

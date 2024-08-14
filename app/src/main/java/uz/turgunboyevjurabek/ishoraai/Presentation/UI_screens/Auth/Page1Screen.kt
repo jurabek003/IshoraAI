@@ -21,10 +21,12 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import uz.turgunboyevjurabek.ishoraai.R
 
 @Composable
-fun Page1Screen() {
+fun Page1Screen(navController: NavController) {
 
     Column(
         modifier = Modifier
@@ -68,6 +70,7 @@ fun Page1Screen() {
 @Preview(showSystemUi = true)
 @Composable
 private fun Page1ScreenUI() {
-    Page1Screen()
+    val navController= rememberNavController()
+    Page1Screen(navController)
 
 }
