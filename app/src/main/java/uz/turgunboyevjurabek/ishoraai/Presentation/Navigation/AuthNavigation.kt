@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.Auth.LoginScreen
 import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.Auth.Page1Screen
+import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.Auth.RegisterScreen
 import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.Auth.SplashScreen
 
 
@@ -23,9 +24,9 @@ val navController= rememberNavController()
         composable("LoginScreen"){
             LoginScreen(navController = navController)
         }
-//        composable("RegisterScreen"){
-//            RegisterScreen(navController = navController)
-//        }
+        composable("RegisterScreen"){
+            RegisterScreen(navController = navController)
+        }
 
     }
 

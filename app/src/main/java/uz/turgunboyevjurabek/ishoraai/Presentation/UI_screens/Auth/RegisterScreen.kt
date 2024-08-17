@@ -2,38 +2,26 @@
 
 package uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.Auth
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarColors
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.surfaceColorAtElevation
 import androidx.compose.runtime.Composable
@@ -59,7 +47,7 @@ import uz.turgunboyevjurabek.ishoraai.Presentation.UI_items.MyTextField
 import uz.turgunboyevjurabek.ishoraai.R
 
 @Composable
-fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
+fun RegisterScreen(modifier: Modifier = Modifier, navController: NavController) {
     Scaffold(
         modifier = modifier.fillMaxSize(),
         topBar = {
@@ -90,6 +78,9 @@ fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
             var password by remember {
                 mutableStateOf("")
             }
+            var passwordAgain by remember {
+                mutableStateOf("")
+            }
 
             Spacer(modifier = modifier.height(60.dp))
             Image(
@@ -101,8 +92,9 @@ fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
             )
             Spacer(modifier = modifier.height(25.dp))
             Text(
-                text = "Akkauntga kirish",
+                text = "Akkauntingizni yarating",
                 fontSize = 20.sp,
+                color = colorResource(id = R.color.unselected),
                 fontFamily = FontFamily(Font(R.font.nunito_bold))
             )
             Spacer(modifier = modifier.height(25.dp))
@@ -117,12 +109,22 @@ fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
             Spacer(modifier = modifier.height(25.dp))
             MyTextField(
                 value = password,
-                placeholder = "Parol",
+                placeholder = "Yangi parol",
                 onValueChange = {
                     password = it
                 }
             )
             Spacer(modifier = modifier.height(25.dp))
+            MyTextField(
+                value = passwordAgain,
+                placeholder = "Parolini tasdiqlang",
+                onValueChange = {
+                    passwordAgain=it
+                }
+            )
+
+            Spacer(modifier = modifier.height(25.dp))
+
             Button(
                 onClick = {},
                 modifier = modifier
@@ -135,7 +137,7 @@ fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
                 )
             ) {
                 Text(
-                    text = "Kirish",
+                    text = "Ro’yxatdan o’tish",
                     fontSize = 20.sp,
                     fontFamily = FontFamily(Font(R.font.nunito_bold))
                 )
@@ -158,30 +160,13 @@ fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
                 MyElevatedCard(onClick = { }, img = painterResource(id = R.drawable.ic_x) )
 
             }
-            Spacer(modifier = modifier.height(40.dp))
-            Row(
-                horizontalArrangement = Arrangement.Center,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(text = "Sizda akkaunt yo’qmi ?", fontSize = 13.sp)
-                TextButton(
-                    onClick = {
-                        navController.navigate("RegisterScreen")
-                    }
-                ){
-                    Text(text = "Ro’yxatdan o’tish", color = colorResource(id = R.color.selected), fontSize = 13.sp)
-                }
-
-            }
-
         }
     }
-
 }
 
 @Preview
 @Composable
-private fun LoginPrevUI() {
-    val navController = rememberNavController()
-    LoginScreen(navController = navController)
+private fun RegisterPageUI() {
+    val navController= rememberNavController()
+    RegisterScreen(navController = navController)
 }
