@@ -226,8 +226,13 @@ fun Page1Screen(navController: NavController) {
                     ) {
                     }
                 }
+
                 Button(
                     onClick = {
+                        if (pagerState.currentPage==2){
+                            navController.navigate("LoginScreen")
+                            return@Button
+                        }
                         coroutineScope.launch {
                             pagerState.animateScrollToPage(
                                 count + 1,
