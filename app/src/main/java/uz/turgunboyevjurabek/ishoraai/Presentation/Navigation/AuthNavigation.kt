@@ -2,6 +2,7 @@ package uz.turgunboyevjurabek.ishoraai.Presentation.Navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -13,8 +14,7 @@ import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.MainScreen
 
 
 @Composable
-fun AuthNavigation() {
-val navController= rememberNavController()
+fun AuthNavigation(navController: NavHostController) {
     NavHost(navController = navController, startDestination = "SplashScreen"){
         composable("SplashScreen"){
             SplashScreen(navController = navController)
@@ -33,6 +33,4 @@ val navController= rememberNavController()
         }
 
     }
-
-
 }

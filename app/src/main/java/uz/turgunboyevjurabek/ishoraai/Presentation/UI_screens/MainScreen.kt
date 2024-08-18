@@ -68,96 +68,14 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import uz.turgunboyevjurabek.ishoraai.Data.PagerItem
+import uz.turgunboyevjurabek.ishoraai.MyNavigationBar
 import uz.turgunboyevjurabek.ishoraai.Presentation.BottomNavigationItem
 import uz.turgunboyevjurabek.ishoraai.R
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter", "AutoboxingStateCreation")
 @Composable
 fun MainScreen(navController: NavController) {
-    val items = listOf(
-        BottomNavigationItem(
-            title = "Asosiy",
-            icon = painterResource(id = R.drawable.ic_home),
-            selectedColor = colorResource(id = R.color.selected),
-            unselectedColor = colorResource(id = R.color.unselected),
-            screenRout = "MainScreen",
-            badgeCount = 0
-        ),
-        BottomNavigationItem(
-            title = "Kurslar",
-            icon = painterResource(id = R.drawable.ic_cours),
-            selectedColor = colorResource(id = R.color.selected),
-            unselectedColor = colorResource(id = R.color.unselected),
-            screenRout = "TasbexScreen",
-            badgeCount = 0
-        ),
-        BottomNavigationItem(
-            title = "Saqlangan",
-            icon = painterResource(id = R.drawable.ic_saves),
-            selectedColor = colorResource(id = R.color.selected),
-            unselectedColor = colorResource(id = R.color.unselected),
-            screenRout = "Dayof7Screen",
-            badgeCount = 0
-        ),
-        BottomNavigationItem(
-            title = "Profilim",
-            icon = painterResource(id = R.drawable.ic_profile),
-            selectedColor = colorResource(id = R.color.selected),
-            unselectedColor = colorResource(id = R.color.unselected),
-            screenRout = "Dayof30Screen",
-            badgeCount = 0
-        ),
-    )
-    var selectedTabIndex by rememberSaveable {
-        mutableIntStateOf(0)
-    }
-    Scaffold(modifier = Modifier.fillMaxSize(),
-        bottomBar = {
-            NavigationBar(
-                containerColor = if (!isSystemInDarkTheme()) {
-                    Color.White
-                } else {
-                    MaterialTheme.colorScheme.surfaceColorAtElevation(20.dp)
-                },
-                tonalElevation = 12.dp,
-                modifier = Modifier
-                    .height(100.dp)
-                    .clip(RoundedCornerShape(topStart = 25.dp, topEnd = 25.dp))
-
-            ) {
-                items.forEachIndexed { index, bottomNavigationItem ->
-                    NavigationBarItem(
-                        selected = selectedTabIndex == index,
-                        onClick = {
-                            selectedTabIndex = index
-                        },
-                        label = {
-                            Text(
-                                text = bottomNavigationItem.title,
-                                fontSize = 10.sp,
-                                onTextLayout = {},
-                                fontWeight = FontWeight.ExtraBold
-                            )
-                        },
-                        icon = {
-                            Icon(
-                                painter = bottomNavigationItem.icon,
-                                contentDescription = null,
-                                modifier = Modifier.size(26.dp),
-                                tint = if (selectedTabIndex == index) bottomNavigationItem.selectedColor else bottomNavigationItem.unselectedColor
-                            )
-                        },
-                    )
-
-                }
-            }
-        }
-    ) {innerpadding->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerpadding),
-        ) {
+        Column{
             val pages = listOf(
                 PagerItem(painterResource(id = R.drawable.img1),"Imo ishoraga","Matn yoki ovozni imo-ishora tiliga o’tkazish"),
                 PagerItem(painterResource(id = R.drawable.boy),"Matn yoki ovozga","Imo-ishor tilini kamera orqali real vaqtda matn yoki ovozga aylantiring"),
@@ -237,9 +155,6 @@ fun MainScreen(navController: NavController) {
 
         }
     }
-
-}
-
 @Composable
 fun ListUI(img:Painter,name:String,about:String) {
     Card(

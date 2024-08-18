@@ -38,7 +38,6 @@ fun SplashScreen(navController: NavController) {
 
     val viewModel =viewModel<ViewModelSplash>()
     val context= LocalContext.current
-    Toast.makeText(context, viewModel.isReady.value.toString(), Toast.LENGTH_SHORT).show()
     val scope= rememberCoroutineScope()
     LaunchedEffect(key1 = true) {
         delay(1500)
