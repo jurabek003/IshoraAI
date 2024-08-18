@@ -66,6 +66,7 @@ fun SplashScreen(navController: NavController) {
             text = "IshoraAI",
             fontSize = 64.sp,
             color = Color.White,
+            onTextLayout = {},
             fontFamily = FontFamily(Font(R.font.jua_regular))
         )
     }

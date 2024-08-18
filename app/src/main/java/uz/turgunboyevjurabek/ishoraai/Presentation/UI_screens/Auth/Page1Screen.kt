@@ -129,9 +129,6 @@ fun Page1Screen(navController: NavController) {
                 selectedTabIndex = pagerState.currentPage
             }
         }
-
-
-
         Column(
             modifier = Modifier
                 .padding(innerPadding)
@@ -142,7 +139,6 @@ fun Page1Screen(navController: NavController) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f)
-
             ) {page ->
                Column(
                    horizontalAlignment = Alignment.CenterHorizontally,
@@ -155,19 +151,22 @@ fun Page1Screen(navController: NavController) {
                            .fillMaxWidth()
                            .height(380.dp),
                    )
-                   Text(text = pages[page].name, fontSize = 18.sp, color = colorResource(id = R.color.selected))
+                   Text(
+                       text = pages[page].name,
+                       fontSize = 18.sp,
+                       onTextLayout = {},
+                       color = colorResource(id = R.color.selected)
+                   )
                    Divider(color = colorResource(id = R.color.selected), thickness = 2.dp)
                    Text(
                        text = pages[page].about,
                        fontSize = 15.sp,
+                       onTextLayout = {},
                        color = colorResource(id = R.color.unselected),
                        modifier = Modifier
                            .padding(horizontal = 20.dp)
                            .height(400.dp)
-
-
                    )
-
                }
             }
             /**
@@ -203,7 +202,7 @@ fun Page1Screen(navController: NavController) {
                             .wrapContentSize(),
                     ) {
                         Icon(imageVector = Icons.Default.ArrowBack, contentDescription = null)
-                        Text(text = "Ortga")
+                        Text(text = "Ortga",onTextLayout = {},)
                     }
                 }else{
                     Spacer(
@@ -249,7 +248,7 @@ fun Page1Screen(navController: NavController) {
                         .padding(horizontal = 8.dp)
                         .width(130.dp)
                 ) {
-                    Text(text = "Oldinga")
+                    Text(text = "Oldinga",onTextLayout = {},)
                     Icon(imageVector = Icons.Default.ArrowForward, contentDescription = null)
                 }
             }

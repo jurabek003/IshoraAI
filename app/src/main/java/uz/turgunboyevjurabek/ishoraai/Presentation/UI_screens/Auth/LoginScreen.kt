@@ -103,6 +103,7 @@ fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
             Text(
                 text = "Akkauntga kirish",
                 fontSize = 20.sp,
+                onTextLayout = {},
                 fontFamily = FontFamily(Font(R.font.nunito_bold))
             )
             Spacer(modifier = modifier.height(25.dp))
@@ -124,7 +125,9 @@ fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
             )
             Spacer(modifier = modifier.height(25.dp))
             Button(
-                onClick = {},
+                onClick = {
+
+                },
                 modifier = modifier
                     .padding(horizontal = 22.dp)
                     .fillMaxWidth()
@@ -137,6 +140,7 @@ fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
                 Text(
                     text = "Kirish",
                     fontSize = 20.sp,
+                    onTextLayout = {},
                     fontFamily = FontFamily(Font(R.font.nunito_bold))
                 )
             }
@@ -145,6 +149,7 @@ fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
             Text(
                 text = "Yoki bular orqali",
                 fontSize = 13.sp,
+                onTextLayout = {},
                 fontFamily = FontFamily(Font(R.font.nunito_medium)),
                 color = colorResource(id = R.color.unselected)
             )
@@ -163,15 +168,14 @@ fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(text = "Sizda akkaunt yo’qmi ?", fontSize = 13.sp)
+                Text(text = "Sizda akkaunt yo’qmi ?", fontSize = 13.sp,onTextLayout = {},)
                 TextButton(
                     onClick = {
                         navController.navigate("RegisterScreen")
                     }
                 ){
-                    Text(text = "Ro’yxatdan o’tish", color = colorResource(id = R.color.selected), fontSize = 13.sp)
+                    Text(text = "Ro’yxatdan o’tish", color = colorResource(id = R.color.selected), fontSize = 13.sp,onTextLayout = {},)
                 }
-
             }
 
         }

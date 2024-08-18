@@ -94,6 +94,7 @@ fun RegisterScreen(modifier: Modifier = Modifier, navController: NavController) 
             Text(
                 text = "Akkauntingizni yarating",
                 fontSize = 20.sp,
+                onTextLayout = {},
                 color = colorResource(id = R.color.unselected),
                 fontFamily = FontFamily(Font(R.font.nunito_bold))
             )
@@ -126,7 +127,9 @@ fun RegisterScreen(modifier: Modifier = Modifier, navController: NavController) 
             Spacer(modifier = modifier.height(25.dp))
 
             Button(
-                onClick = {},
+                onClick = {
+                    navController.navigate("MainScreen")
+                },
                 modifier = modifier
                     .padding(horizontal = 22.dp)
                     .fillMaxWidth()
@@ -139,6 +142,7 @@ fun RegisterScreen(modifier: Modifier = Modifier, navController: NavController) 
                 Text(
                     text = "Ro’yxatdan o’tish",
                     fontSize = 20.sp,
+                    onTextLayout = {},
                     fontFamily = FontFamily(Font(R.font.nunito_bold))
                 )
             }
@@ -147,6 +151,7 @@ fun RegisterScreen(modifier: Modifier = Modifier, navController: NavController) 
             Text(
                 text = "Yoki bular orqali",
                 fontSize = 13.sp,
+                onTextLayout = {},
                 fontFamily = FontFamily(Font(R.font.nunito_medium)),
                 color = colorResource(id = R.color.unselected)
             )

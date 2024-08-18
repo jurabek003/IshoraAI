@@ -9,6 +9,7 @@ import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.Auth.LoginScreen
 import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.Auth.Page1Screen
 import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.Auth.RegisterScreen
 import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.Auth.SplashScreen
+import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.MainScreen
 
 
 @Composable
@@ -26,6 +27,9 @@ val navController= rememberNavController()
         }
         composable("RegisterScreen"){
             RegisterScreen(navController = navController)
+        }
+        composable("MainScreen"){
+            MainScreen(navController=navController)
         }
 
     }
