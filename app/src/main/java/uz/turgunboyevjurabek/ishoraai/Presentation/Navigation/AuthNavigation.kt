@@ -10,7 +10,10 @@ import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.Auth.LoginScreen
 import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.Auth.Page1Screen
 import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.Auth.RegisterScreen
 import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.Auth.SplashScreen
+import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.CourseScreen
 import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.MainScreen
+import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.ProfileScreen
+import uz.turgunboyevjurabek.ishoraai.Presentation.UI_screens.SaveScreen
 
 
 @Composable
@@ -30,6 +33,15 @@ fun AuthNavigation(navController: NavHostController) {
         }
         composable("MainScreen"){
             MainScreen(navController=navController)
+        }
+        composable("CourseScreen"){
+            CourseScreen(navHostController = navController)
+        }
+        composable("SaveScreen"){
+            SaveScreen(navHostController = navController)
+        }
+        composable("ProfileScreen"){
+            ProfileScreen(navHostController = navController)
         }
 
     }

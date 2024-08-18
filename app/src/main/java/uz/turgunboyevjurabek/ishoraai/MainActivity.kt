@@ -105,7 +105,7 @@ fun MyNavigationBar(navController: NavHostController) {
             icon = painterResource(id = R.drawable.ic_cours),
             selectedColor = colorResource(id = R.color.selected),
             unselectedColor = colorResource(id = R.color.unselected),
-            screenRout = "TasbexScreen",
+            screenRout = "CourseScreen",
             badgeCount = 0
         ),
         BottomNavigationItem(
@@ -113,7 +113,7 @@ fun MyNavigationBar(navController: NavHostController) {
             icon = painterResource(id = R.drawable.ic_saves),
             selectedColor = colorResource(id = R.color.selected),
             unselectedColor = colorResource(id = R.color.unselected),
-            screenRout = "Dayof7Screen",
+            screenRout = "SaveScreen",
             badgeCount = 0
         ),
         BottomNavigationItem(
@@ -121,7 +121,7 @@ fun MyNavigationBar(navController: NavHostController) {
             icon = painterResource(id = R.drawable.ic_profile),
             selectedColor = colorResource(id = R.color.selected),
             unselectedColor = colorResource(id = R.color.unselected),
-            screenRout = "Dayof30Screen",
+            screenRout = "ProfileScreen",
             badgeCount = 0
         ),
     )
@@ -145,6 +145,7 @@ fun MyNavigationBar(navController: NavHostController) {
                 selected = selectedTabIndex == index,
                 onClick = {
                     selectedTabIndex = index
+                    navController.navigate(bottomNavigationItem.screenRout)
                 },
                 label = {
                     Text(
