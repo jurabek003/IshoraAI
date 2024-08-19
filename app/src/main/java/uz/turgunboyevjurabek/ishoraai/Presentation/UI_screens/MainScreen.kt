@@ -163,6 +163,7 @@ fun ListUI(img:Painter,name:String,about:String) {
             .padding(15.dp)
             .width(240.dp)
             .wrapContentHeight(unbounded = true),
+        elevation = CardDefaults.cardElevation(5.dp),
         shape = RoundedCornerShape(25.dp),
     ) {
         Column(
