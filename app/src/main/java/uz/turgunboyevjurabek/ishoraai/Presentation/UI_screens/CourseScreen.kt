@@ -52,10 +52,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 import uz.turgunboyevjurabek.ishoraai.Data.CourseLists
-import uz.turgunboyevjurabek.ishoraai.Presentation.UI_items.MyColumn045
-import uz.turgunboyevjurabek.ishoraai.Presentation.UI_items.MyColumn055
 import uz.turgunboyevjurabek.ishoraai.R
 
 @Composable
@@ -202,45 +199,89 @@ fun ListCourseUI(courseLists: CourseLists,id:Int) {
             modifier = Modifier
                 .fillMaxSize()
         ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth(0.5f)
-                    .fillMaxHeight()
-                    .padding(start = 17.dp),
-                verticalArrangement = Arrangement.Center
-            ) {
-                Text(
-                    text = courseLists.title,
-                    fontSize = 16.sp,
-                    fontFamily = FontFamily(Font(R.font.nunito_black))
-                )
-                Spacer(modifier = Modifier.height(5.dp))
-                Text(
-                    text = courseLists.about,
-                    fontSize = 12.sp,
-                    maxLines = 2,
-                    lineHeight = TextUnit(15f, TextUnitType.Sp),
-                    overflow = TextOverflow.Ellipsis,
-                    fontFamily = FontFamily(Font(R.font.nunito_medium)),
-                )
-
-            }
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .fillMaxHeight(),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Image(
-                    painter = courseLists.img,
-                    contentDescription = null,
-                    contentScale = ContentScale.Crop,
+            if (id%2==0){
+                Column(
                     modifier = Modifier
-                        .width(110.dp)
-                        .height(80.dp)
-                        .clip(RoundedCornerShape(5.dp))
-                )
+                        .fillMaxWidth(0.5f)
+                        .fillMaxHeight()
+                        .padding(start = 17.dp),
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    Text(
+                        text = courseLists.title,
+                        fontSize = 16.sp,
+                        fontFamily = FontFamily(Font(R.font.nunito_black))
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Text(
+                        text = courseLists.about,
+                        fontSize = 12.sp,
+                        maxLines = 2,
+                        lineHeight = TextUnit(15f, TextUnitType.Sp),
+                        overflow = TextOverflow.Ellipsis,
+                        fontFamily = FontFamily(Font(R.font.nunito_medium)),
+                    )
+
+                }
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .fillMaxHeight(),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Image(
+                        painter = courseLists.img,
+                        contentDescription = null,
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .width(110.dp)
+                            .height(80.dp)
+                            .clip(RoundedCornerShape(5.dp))
+                    )
+                }
+
+            }else{
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth(0.5f)
+                        .fillMaxHeight(),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Image(
+                        painter = courseLists.img,
+                        contentDescription = null,
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .width(110.dp)
+                            .height(80.dp)
+                            .clip(RoundedCornerShape(5.dp))
+                    )
+                }
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .fillMaxHeight()
+                        .padding(start = 17.dp),
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    Text(
+                        text = courseLists.title,
+                        fontSize = 16.sp,
+                        fontFamily = FontFamily(Font(R.font.nunito_black))
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Text(
+                        text = courseLists.about,
+                        fontSize = 12.sp,
+                        maxLines = 2,
+                        lineHeight = TextUnit(15f, TextUnitType.Sp),
+                        overflow = TextOverflow.Ellipsis,
+                        fontFamily = FontFamily(Font(R.font.nunito_medium)),
+                    )
+
+                }
             }
 
         }

@@ -160,13 +160,17 @@ fun MyNavigationBar(navController: NavHostController) {
                         painter = bottomNavigationItem.icon,
                         contentDescription = null,
                         modifier = Modifier.size(26.dp),
-                        tint = if (selectedTabIndex == index) bottomNavigationItem.selectedColor else bottomNavigationItem.unselectedColor
+//                        tint = if (selectedTabIndex == index) bottomNavigationItem.selectedColor else bottomNavigationItem.unselectedColor
                     )
                 },
                 colors = NavigationBarItemDefaults.colors(
                     indicatorColor = MaterialTheme.colorScheme.surfaceColorAtElevation(
                         LocalAbsoluteTonalElevation.current
-                    )
+                    ),
+                    selectedIconColor = bottomNavigationItem.selectedColor,
+                    selectedTextColor = bottomNavigationItem.selectedColor,
+                    unselectedIconColor = bottomNavigationItem.unselectedColor,
+                    unselectedTextColor = bottomNavigationItem.unselectedColor
                 ),
             )
 

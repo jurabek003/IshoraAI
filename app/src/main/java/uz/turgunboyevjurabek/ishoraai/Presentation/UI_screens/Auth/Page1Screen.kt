@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.Column
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -83,6 +84,7 @@ fun Page1Screen(navController: NavController) {
                 title = {
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
+                    actionIconContentColor = colorResource(id = R.color.selected),
                     containerColor = if(!isSystemInDarkTheme()){
                      Color.White
                     }else{
@@ -90,19 +92,27 @@ fun Page1Screen(navController: NavController) {
                     }
                 ),
                 actions = {
-                    IconButton(
-                        onClick = { },
+                    Column(
                         modifier = Modifier
-                            .padding(end = 12.dp, bottom = 20.dp)
-
+                            .fillMaxHeight()
+                            .fillMaxWidth(0.2f),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        Icon(
-                            painter = painterResource(id = R.drawable.ic_x),
-                            contentDescription = null,
-                            tint = colorResource(id = R.color.selected),
-                            modifier = Modifier
-                        )
+                        IconButton(
+                            onClick = {
+                                navController.navigate("LoginScreen")
+                            },
+                        ) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.ic_cancel),
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .size(27.dp)
+                            )
+                        }
                     }
+
                 }
             )
         }
