@@ -29,7 +29,7 @@ fun CalendarTextField(modifier: Modifier = Modifier,value:String,icon: Painter?)
             .width(200.dp)
             .padding(horizontal = 20.dp),
         shape = RoundedCornerShape(12.dp),
-        shadowElevation = 8.dp
+        shadowElevation = 6.dp
     ) {
         TextField(
             value = textState.value,
@@ -42,7 +42,7 @@ fun CalendarTextField(modifier: Modifier = Modifier,value:String,icon: Painter?)
                 ),
             shape = RoundedCornerShape(12.dp),
             singleLine = true,
-            textStyle = TextStyle(fontSize = 16.sp),
+            textStyle = TextStyle(fontSize = 12.sp),
             trailingIcon = {
                 if (icon != null){
                     IconButton(onClick = {}) {

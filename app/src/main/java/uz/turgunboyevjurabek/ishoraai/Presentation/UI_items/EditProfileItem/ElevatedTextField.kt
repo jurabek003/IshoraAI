@@ -40,7 +40,7 @@ fun ElevatedTextField(modifier: Modifier,value:String,icon:Painter?) {
             .fillMaxWidth()
             .padding(horizontal = 20.dp),
         shape = RoundedCornerShape(12.dp),
-        shadowElevation = 8.dp
+        shadowElevation = 6.dp
     ) {
         TextField(
             value = textState.value,

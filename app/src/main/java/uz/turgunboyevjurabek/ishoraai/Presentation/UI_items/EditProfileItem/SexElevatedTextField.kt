@@ -33,7 +33,7 @@ fun SexElevatedTextField(modifier: Modifier = Modifier,value:String,icon: Painte
             .width(200.dp)
             .padding(horizontal = 20.dp),
         shape = RoundedCornerShape(12.dp),
-        shadowElevation = 8.dp
+        shadowElevation = 6.dp
     ) {
         TextField(
             value = textState.value,
@@ -46,7 +46,7 @@ fun SexElevatedTextField(modifier: Modifier = Modifier,value:String,icon: Painte
                 ),
             shape = RoundedCornerShape(12.dp),
             singleLine = true,
-            textStyle = TextStyle(fontSize = 19.sp, fontFamily = FontFamily(
+            textStyle = TextStyle(fontSize = 15.sp, fontFamily = FontFamily(
                 Font(R.font.nunito_medium)
             )),
             trailingIcon = {

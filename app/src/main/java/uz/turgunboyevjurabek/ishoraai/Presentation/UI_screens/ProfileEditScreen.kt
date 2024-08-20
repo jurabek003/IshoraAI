@@ -22,6 +22,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material3.AlertDialogDefaults.shape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -51,6 +53,7 @@ import uz.turgunboyevjurabek.ishoraai.Presentation.UI_items.ChangeProfileImgItem
 import uz.turgunboyevjurabek.ishoraai.Presentation.UI_items.EditProfileItem.CalendarTextField
 import uz.turgunboyevjurabek.ishoraai.Presentation.UI_items.EditProfileItem.ElevatedTextField
 import uz.turgunboyevjurabek.ishoraai.Presentation.UI_items.EditProfileItem.EmailTextField
+import uz.turgunboyevjurabek.ishoraai.Presentation.UI_items.EditProfileItem.PasswordTextField
 import uz.turgunboyevjurabek.ishoraai.Presentation.UI_items.EditProfileItem.SexElevatedTextField
 import uz.turgunboyevjurabek.ishoraai.Presentation.UI_items.MyCustomIconButton
 import uz.turgunboyevjurabek.ishoraai.R
@@ -160,6 +163,23 @@ fun ProfileEditScreen(modifier: Modifier = Modifier,navHostController: NavHostCo
             )
             Spacer(modifier = modifier.height(10.dp))
             EmailTextField(modifier = modifier, value = "dona21@gmail.com", icon = null)
+            Spacer(modifier = modifier.height(20.dp))
+            PasswordTextField(value = "Jurabek" )
+            Spacer(modifier = modifier.height(35.dp))
+            Button(
+                modifier = modifier
+                    .fillMaxWidth()
+                    .height(55.dp)
+                    .padding(horizontal = 20.dp),
+                shape = RoundedCornerShape(10.dp),
+                onClick = {},
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = colorResource(id = R.color.selected),
+                    contentColor = Color.White,
+                )
+            ) {
+                Text(text = "Saqlash", fontSize = 16.sp, fontFamily = FontFamily(Font(R.font.nunito_bold)))
+            }
         }
     }
 
