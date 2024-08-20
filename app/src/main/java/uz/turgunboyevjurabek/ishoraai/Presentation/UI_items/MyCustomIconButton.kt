@@ -42,7 +42,7 @@ fun MyCustomIconButton(modifier: Modifier = Modifier, onClick: () -> Unit,img:Pa
             Image(
                 painter = img,
                 contentDescription = null,
-                modifier=modifier
+                modifier=Modifier
                     .size(15.dp)
             )
         }
